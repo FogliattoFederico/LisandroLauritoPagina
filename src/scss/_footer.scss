@@ -1,0 +1,17 @@
+.footer {
+  background: $navy-900;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 2.5rem 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  strong { color: $white; font-weight: 600; }
+
+  p { font-size: $fs-xs; font-family: $font-mono; letter-spacing: 0.02em; }
+}

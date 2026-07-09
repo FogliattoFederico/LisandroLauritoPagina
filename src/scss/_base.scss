@@ -1,0 +1,118 @@
+body {
+  font-family: $font-body;
+  font-size: $fs-base;
+  color: $gray-600;
+  background: $paper;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: $font-display;
+  color: $navy-900;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid $blue-600;
+  outline-offset: 3px;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+.eyebrow {
+  font-family: $font-mono;
+  font-size: $fs-xs;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $blue-600;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+
+  &::before {
+    content: '';
+    width: 1.4em;
+    height: 1px;
+    background: $blue-600;
+  }
+}
+
+.section {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.section--alt {
+  background: $blue-100;
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+
+  h2 {
+    font-size: $fs-xl;
+    margin-top: 0.75rem;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.85em 1.7em;
+  font-family: $font-body;
+  font-size: $fs-sm;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: $radius;
+  transition: background-color 0.2s $ease, color 0.2s $ease, border-color 0.2s $ease, transform 0.2s $ease;
+}
+
+.btn--primary {
+  background: $navy-900;
+  color: $white;
+
+  &:hover { background: $blue-600; transform: translateY(-1px); }
+}
+
+.btn--ghost {
+  background: transparent;
+  color: $navy-900;
+  border: 1px solid $line;
+
+  &:hover { border-color: $navy-900; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: $navy-900;
+  color: $white;
+  padding: 0.75em 1.25em;
+  z-index: 100;
+
+  &:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+}

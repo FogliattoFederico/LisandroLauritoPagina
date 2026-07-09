@@ -1,0 +1,42 @@
+// ============================================================
+// Tokens — Dr. Lisandro J. Laurito, Médico Psiquiatra
+// Dirección: clínico, sereno, de confianza. Sin clichés de
+// "wellness" (nada de lotos, cerebros ni degradés pastel).
+// ============================================================
+
+// Color -------------------------------------------------------
+$navy-900:   #16243D; // texto principal, header, footer
+$navy-700:   #26405F; // texto secundario sobre claro
+$blue-600:   #3D6A97; // acento primario — botones, links, foco
+$blue-100:   #E7EEF5; // fondos de sección alternados
+$paper:      #FBFBFA; // fondo base (blanco cálido, no puro)
+$line:       #D8DEE6; // bordes, divisores
+$gray-600:   #5B6472; // texto de cuerpo
+$signal:     #7A9E85; // acento secundario, muy medido (confirmación / calma)
+$white:      #FFFFFF;
+
+// Tipografía ----------------------------------------------------
+$font-display: 'Source Serif 4', Georgia, serif;
+$font-body:    'IBM Plex Sans', -apple-system, sans-serif;
+$font-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+// Escala tipográfica
+$fs-2xl: clamp(2.5rem, 4vw + 1rem, 4.25rem);
+$fs-xl:  clamp(1.9rem, 2.4vw + 1rem, 2.75rem);
+$fs-lg:  1.5rem;
+$fs-md:  1.125rem;
+$fs-base: 1rem;
+$fs-sm:  0.875rem;
+$fs-xs:  0.75rem;
+
+// Layout ----------------------------------------------------
+$max-width: 1180px;
+$radius: 3px; // casi recto — clínico, no juguetón
+$gutter: clamp(1.5rem, 5vw, 4rem);
+
+// Sombra sutil, nunca decorativa
+$shadow-sm: 0 1px 2px rgba(22, 36, 61, 0.06);
+$shadow-md: 0 8px 24px rgba(22, 36, 61, 0.08);
+
+// Transiciones
+$ease: cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,0 +1,50 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 251, 250, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $line;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+  }
+}
+
+.nav__brand {
+  font-family: $font-display;
+  font-size: 1.15rem;
+  color: $navy-900;
+  font-weight: 600;
+
+  span {
+    display: block;
+    font-family: $font-mono;
+    font-size: 0.68rem;
+    color: $blue-600;
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+
+  a:not(.btn) {
+    font-size: $fs-sm;
+    color: $navy-700;
+    transition: color 0.2s $ease;
+
+    &:hover { color: $blue-600; }
+  }
+
+  @media (max-width: 780px) {
+    a:not(.btn) { display: none; }
+  }
+}
