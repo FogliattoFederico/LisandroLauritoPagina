@@ -14,6 +14,7 @@ const { deleteAsync } = require('del');
 
 const paths = {
   html: { src: 'src/*.html', dest: 'dist' },
+  static: { src: ['src/robots.txt', 'src/sitemap.xml'], dest: 'dist' },
   styles: { src: 'src/scss/**/*.scss', dest: 'dist/css' },
   scripts: { src: 'src/js/**/*.js', dest: 'dist/js' },
   img: { src: 'src/img/**/*', dest: 'dist/img' }
@@ -54,6 +55,11 @@ function scripts() {
     .pipe(browserSync.stream());
 }
 
+function staticFiles() {
+  return gulp.src(paths.static.src)
+    .pipe(gulp.dest(paths.static.dest));
+}
+
 function images() {
   return gulp.src(paths.img.src, { encoding: false })
     .pipe(gulp.dest(paths.img.dest));
@@ -66,17 +72,19 @@ function serve(cb) {
 
 function watchFiles() {
   gulp.watch(paths.html.src, html);
+  gulp.watch(paths.static.src, staticFiles);
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.scripts.src, scripts);
   gulp.watch(paths.img.src, images);
   gulp.watch('dist/**/*.html').on('change', browserSync.reload);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, styles, scripts, images));
+const build = gulp.series(clean, gulp.parallel(html, staticFiles, styles, scripts, images));
 const dev = gulp.series(build, gulp.parallel(watchFiles, serve));
 
 exports.clean = clean;
 exports.html = html;
+exports.static = staticFiles;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.images = images;

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lauritolisandro.netlify.app/sitemap.xml
